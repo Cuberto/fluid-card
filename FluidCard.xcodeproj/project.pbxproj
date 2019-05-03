@@ -12,6 +12,9 @@
 		CEED17E9227CCBFD001E611C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEED17E7227CCBFD001E611C /* Main.storyboard */; };
 		CEED17EB227CCBFF001E611C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEED17EA227CCBFF001E611C /* Assets.xcassets */; };
 		CEED17EE227CCBFF001E611C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEED17EC227CCBFF001E611C /* LaunchScreen.storyboard */; };
+		CEED17F7227CCD59001E611C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEED17F6227CCD59001E611C /* Extensions.swift */; };
+		CEED17FC227CCE18001E611C /* TimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEED17FA227CCE18001E611C /* TimingFunction.swift */; };
+		CEED17FD227CCE18001E611C /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEED17FB227CCE18001E611C /* UnitBezier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		CEED17EA227CCBFF001E611C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEED17ED227CCBFF001E611C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEED17EF227CCBFF001E611C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEED17F6227CCD59001E611C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		CEED17FA227CCE18001E611C /* TimingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingFunction.swift; sourceTree = "<group>"; };
+		CEED17FB227CCE18001E611C /* UnitBezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitBezier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +44,7 @@
 		CEED17D7227CCBFD001E611C = {
 			isa = PBXGroup;
 			children = (
+				CEED17F9227CCDB7001E611C /* Sample */,
 				CEED17E2227CCBFD001E611C /* FluidCard */,
 				CEED17E1227CCBFD001E611C /* Products */,
 			);
@@ -54,6 +61,32 @@
 		CEED17E2227CCBFD001E611C /* FluidCard */ = {
 			isa = PBXGroup;
 			children = (
+				CEED17F8227CCD7D001E611C /* TimingFunctions */,
+				CEED17F5227CCD49001E611C /* Extensions */,
+			);
+			path = FluidCard;
+			sourceTree = "<group>";
+		};
+		CEED17F5227CCD49001E611C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CEED17F6227CCD59001E611C /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CEED17F8227CCD7D001E611C /* TimingFunctions */ = {
+			isa = PBXGroup;
+			children = (
+				CEED17FA227CCE18001E611C /* TimingFunction.swift */,
+				CEED17FB227CCE18001E611C /* UnitBezier.swift */,
+			);
+			path = TimingFunctions;
+			sourceTree = "<group>";
+		};
+		CEED17F9227CCDB7001E611C /* Sample */ = {
+			isa = PBXGroup;
+			children = (
 				CEED17E3227CCBFD001E611C /* AppDelegate.swift */,
 				CEED17E5227CCBFD001E611C /* ViewController.swift */,
 				CEED17E7227CCBFD001E611C /* Main.storyboard */,
@@ -61,7 +94,7 @@
 				CEED17EC227CCBFF001E611C /* LaunchScreen.storyboard */,
 				CEED17EF227CCBFF001E611C /* Info.plist */,
 			);
-			path = FluidCard;
+			path = Sample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +169,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEED17E6227CCBFD001E611C /* ViewController.swift in Sources */,
+				CEED17FC227CCE18001E611C /* TimingFunction.swift in Sources */,
+				CEED17F7227CCD59001E611C /* Extensions.swift in Sources */,
+				CEED17FD227CCE18001E611C /* UnitBezier.swift in Sources */,
 				CEED17E4227CCBFD001E611C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,7 +320,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SK7A63GXF6;
-				INFOPLIST_FILE = FluidCard/Info.plist;
+				INFOPLIST_FILE = Sample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -292,7 +329,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cuberto.components.FluidCard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -302,7 +339,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SK7A63GXF6;
-				INFOPLIST_FILE = FluidCard/Info.plist;
+				INFOPLIST_FILE = Sample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +348,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.cuberto.components.FluidCard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
