@@ -10,11 +10,15 @@
 		CEED17E4227CCBFD001E611C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEED17E3227CCBFD001E611C /* AppDelegate.swift */; };
 		CEED17E6227CCBFD001E611C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEED17E5227CCBFD001E611C /* ViewController.swift */; };
 		CEED17E9227CCBFD001E611C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEED17E7227CCBFD001E611C /* Main.storyboard */; };
-		CEED17EB227CCBFF001E611C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEED17EA227CCBFF001E611C /* Assets.xcassets */; };
 		CEED17EE227CCBFF001E611C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEED17EC227CCBFF001E611C /* LaunchScreen.storyboard */; };
 		CEED17F7227CCD59001E611C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEED17F6227CCD59001E611C /* Extensions.swift */; };
 		CEED17FC227CCE18001E611C /* TimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEED17FA227CCE18001E611C /* TimingFunction.swift */; };
 		CEED17FD227CCE18001E611C /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEED17FB227CCE18001E611C /* UnitBezier.swift */; };
+		CEED17FF227CCE89001E611C /* FluidCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEED17FE227CCE89001E611C /* FluidCardView.swift */; };
+		CEED1801227CD485001E611C /* ExpandButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEED1800227CD485001E611C /* ExpandButton.swift */; };
+		CEED1803227CE81E001E611C /* TopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEED1802227CE81E001E611C /* TopView.xib */; };
+		CEED1805227CE8E4001E611C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEED1804227CE8E4001E611C /* Assets.xcassets */; };
+		CEED1807227CED46001E611C /* BottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEED1806227CED46001E611C /* BottomView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,12 +26,16 @@
 		CEED17E3227CCBFD001E611C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEED17E5227CCBFD001E611C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CEED17E8227CCBFD001E611C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CEED17EA227CCBFF001E611C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEED17ED227CCBFF001E611C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEED17EF227CCBFF001E611C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEED17F6227CCD59001E611C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CEED17FA227CCE18001E611C /* TimingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingFunction.swift; sourceTree = "<group>"; };
 		CEED17FB227CCE18001E611C /* UnitBezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitBezier.swift; sourceTree = "<group>"; };
+		CEED17FE227CCE89001E611C /* FluidCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidCardView.swift; sourceTree = "<group>"; };
+		CEED1800227CD485001E611C /* ExpandButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandButton.swift; sourceTree = "<group>"; };
+		CEED1802227CE81E001E611C /* TopView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopView.xib; sourceTree = "<group>"; };
+		CEED1804227CE8E4001E611C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CEED1806227CED46001E611C /* BottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +71,8 @@
 			children = (
 				CEED17F8227CCD7D001E611C /* TimingFunctions */,
 				CEED17F5227CCD49001E611C /* Extensions */,
+				CEED17FE227CCE89001E611C /* FluidCardView.swift */,
+				CEED1800227CD485001E611C /* ExpandButton.swift */,
 			);
 			path = FluidCard;
 			sourceTree = "<group>";
@@ -89,10 +99,12 @@
 			children = (
 				CEED17E3227CCBFD001E611C /* AppDelegate.swift */,
 				CEED17E5227CCBFD001E611C /* ViewController.swift */,
+				CEED1804227CE8E4001E611C /* Assets.xcassets */,
 				CEED17E7227CCBFD001E611C /* Main.storyboard */,
-				CEED17EA227CCBFF001E611C /* Assets.xcassets */,
 				CEED17EC227CCBFF001E611C /* LaunchScreen.storyboard */,
 				CEED17EF227CCBFF001E611C /* Info.plist */,
+				CEED1802227CE81E001E611C /* TopView.xib */,
+				CEED1806227CED46001E611C /* BottomView.xib */,
 			);
 			path = Sample;
 			sourceTree = "<group>";
@@ -156,7 +168,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEED17EE227CCBFF001E611C /* LaunchScreen.storyboard in Resources */,
-				CEED17EB227CCBFF001E611C /* Assets.xcassets in Resources */,
+				CEED1803227CE81E001E611C /* TopView.xib in Resources */,
+				CEED1807227CED46001E611C /* BottomView.xib in Resources */,
+				CEED1805227CE8E4001E611C /* Assets.xcassets in Resources */,
 				CEED17E9227CCBFD001E611C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -169,9 +183,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEED17E6227CCBFD001E611C /* ViewController.swift in Sources */,
+				CEED17FF227CCE89001E611C /* FluidCardView.swift in Sources */,
 				CEED17FC227CCE18001E611C /* TimingFunction.swift in Sources */,
 				CEED17F7227CCD59001E611C /* Extensions.swift in Sources */,
 				CEED17FD227CCE18001E611C /* UnitBezier.swift in Sources */,
+				CEED1801227CD485001E611C /* ExpandButton.swift in Sources */,
 				CEED17E4227CCBFD001E611C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
