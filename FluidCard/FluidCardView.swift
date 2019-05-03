@@ -15,7 +15,9 @@ class FluidCardView: UIView {
     var collapseDuration: TimeInterval = 0.35
 
     private let cornerRadius: CGFloat = 20.0
-    private var collapsedHeight: CGFloat = 315
+    private var collapsedHeight: CGFloat {
+        return topHeight + 51.0
+    }
     private var expandedHeight: CGFloat {
         return topHeight + gap + bottomHeight
     }
@@ -83,7 +85,11 @@ class FluidCardView: UIView {
 
     private func configureTopContent() {
         topContentView.translatesAutoresizingMaskIntoConstraints = false
-        topHeight = topContentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height + 2 * topContentInset
+        let size = CGSize(width: max(topContentInset * 4, bounds.width), height: topContentInset * 2)
+        topHeight = topContentView.systemLayoutSizeFitting(size,
+                                                           withHorizontalFittingPriority: .required,
+                                                           verticalFittingPriority: .defaultLow).height
+        topHeight += 2 * topContentInset
         addSubview(topContentView)
         NSLayoutConstraint.activate([
             topContentView.topAnchor.constraint(equalTo: topView.topAnchor, constant: topContentInset),
@@ -96,7 +102,11 @@ class FluidCardView: UIView {
 
     private func configureBottomContent() {
         bottomContentView.translatesAutoresizingMaskIntoConstraints = false
-        bottomHeight = bottomContentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height + 2 * bottomContentInset
+        let size = CGSize(width: max(bottomContentInset * 4, bounds.width), height: bottomContentInset * 2)
+        bottomHeight = bottomContentView.systemLayoutSizeFitting(size,
+                                                                 withHorizontalFittingPriority: .required,
+                                                                 verticalFittingPriority: .defaultLow).height
+        bottomHeight += 2 * bottomContentInset
         let csBottomExpanded = bottomView.heightAnchor.constraint(equalToConstant: bottomHeight)
         if self.csBottomExpanded.isActive {
             self.csBottomExpanded.isActive = false
@@ -152,9 +162,14 @@ class FluidCardView: UIView {
         return CGSize(width: contentWidth, height: isExpanded ? expandedHeight : collapsedHeight)
     }
 
+    private var layoutWidth: CGFloat = 0
     override func layoutSubviews() {
         guard !expanding, !collapsing else { return }
         super.layoutSubviews()
+        guard abs(bounds.width - layoutWidth) > 0.001 else { return }
+        layoutWidth = bounds.width
+        configureBottomContent()
+        configureTopContent()
     }
 
     private var progress: CGFloat = 0
@@ -172,11 +187,13 @@ class FluidCardView: UIView {
         animateDirection(from: -CGFloat.pi, to: 0, duration: collapseDuration)
     }
 
+    private var expandStartHeight: CGFloat = 0
     func expand() {
         guard !isExpanded, !expanding, !collapsing else { return }
         isExpanded = true
         expanding = true
         collapseOverlayShown = false
+        expandStartHeight = bounds.height
         overlay.frame = CGRect(x: 0, y: topView.frame.minY, width: bounds.width, height: bottomView.frame.maxY)
         overlay.layer.mask = nil
         overlay.isHidden = false
@@ -332,7 +349,7 @@ class FluidCardView: UIView {
 
         let gap = (expandedHeight - topHeight - bottomHeight) * gapProgress
         let topOffset = 10 * topProgress
-        let bHeight = (collapsedHeight - topHeight) + (bottomHeight - (collapsedHeight - topHeight)) * progress
+        let bHeight = (expandStartHeight - topHeight) + (bottomHeight - (expandStartHeight - topHeight)) * progress
         bottomView.frame = CGRect(x: 0,
                                   y: topHeight + gap,
                                   width: bounds.width,
