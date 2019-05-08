@@ -7,7 +7,7 @@ Cuberto is a leading digital agency with solid design and development expertise.
 [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/Cuberto/fluid-card/master/LICENSE)
 [![Swift 4.2](https://img.shields.io/badge/Swift-4.2-green.svg?style=flat)](https://developer.apple.com/swift/)
 
-![Animation](https://raw.githubusercontent.com/Cuberto/fluid-card/master/Screenshots/animation.gif)
+<img src="https://raw.githubusercontent.com/Cuberto/fluid-card/master/Screenshots/animation.gif" width="440">
 
 Showcase of animation expandable card control
 
